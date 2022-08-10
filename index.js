@@ -13,15 +13,22 @@ window.addEventListener("load", (event) => {
 
     // console.log('shipTest');
     let shipTest = new Ship(4);
-    // console.log(shipTest);
+    console.log({shipTest});
     
     // Add all the divs to the HTML
     document.querySelector("#game-board").innerHTML = html;
 
     document.querySelectorAll(".square").forEach((square) => {
+      
+  
+
+  
     square.addEventListener("click", () => {
       // TODO: write some code here
       console.log({square});
+
+      let findDiv = document.querySelectorAll(".square");
+      // console.log({findDiv});
 
         const clickedSquare = {x:square.dataset["positionX"],y:square.dataset["positionY"]}
         // console.log({clickedSquare});

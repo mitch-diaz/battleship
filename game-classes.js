@@ -1,8 +1,24 @@
+class Gameboard {
+    constructor(theDivs) {
+
+        
+    }
+
+    addPlayer() {
+
+    };
+
+    addGameBoard() {
+        
+    }
+}
+
 class Ship {
-    constructor(size) {
+    constructor(size, name) {
         this.health = size;
+        this.shipName = name;
         this.damage = 0;
-        this.location = []
+        this.location = [];
     }
 
     setLocation(clickedDivCoordinates){
@@ -29,6 +45,7 @@ class Ship {
         }
         this.location.push(clickedDivCoordinates);
 
+        // We need the logic to keep the ships confined to the gameboard.
     }
 
     receiveDamage() {
@@ -37,7 +54,8 @@ class Ship {
 }
 
 class Player {
-    constructor(theAmmo,) {
+    constructor(playerName, theAmmo,) {
+        this.theName = playerName;
         this.ammo = theAmmo;
     }
 
@@ -49,29 +67,3 @@ class Player {
 }
 
 
-
-
-class Carrier extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-
-}
-
-class Battleship extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
-
-class Cruiser extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
-
-class Destroyer extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
