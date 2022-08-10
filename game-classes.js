@@ -35,3 +35,43 @@ class Ship {
         this.damage++;
     }
 }
+
+class Player {
+    constructor(theAmmo,) {
+        this.ammo = theAmmo;
+    }
+
+    attack() {
+        return this.health;
+    }
+
+
+}
+
+
+
+
+class Carrier extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+
+}
+
+class Battleship extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Cruiser extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Destroyer extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
