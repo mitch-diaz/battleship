@@ -1,15 +1,51 @@
+class Ship {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Game {
+    constructor() {
+        this.players = [];
+    }
+}
+
+class Player {
+    constructor(name) {
+        this.playerGameBoard = [];
+        this.name = name
+    }
+}
+
+
+// **************************************
+
+
 class Gameboard {
     constructor(theDivs) {
 
-        
+    }
+
+    addGameBoard() {
+
     }
 
     addPlayer() {
 
-    };
+    }
 
-    addGameBoard() {
+    displayScoreboard() {
+        // display scoreboard info:
+        // Hits, Sunk ships, Total points
+    }
+
+    displayFiringReport() {
         
+    }
+
+    displaySunkShips() {
+
     }
 }
 
@@ -45,7 +81,7 @@ class Ship {
         }
         this.location.push(clickedDivCoordinates);
 
-        // We need the logic to keep the ships confined to the gameboard.
+        // We need the logic that will keep the ships confined to the gameboard when placed (collision detection?).
     }
 
     receiveDamage() {
@@ -54,16 +90,18 @@ class Ship {
 }
 
 class Player {
-    constructor(playerName, theAmmo,) {
-        this.theName = playerName;
+    constructor(name, color, theAmmo) {
+        this.playerName = name;
+        this.playerColor = color;
         this.ammo = theAmmo;
     }
 
-    attack() {
-        return this.health;
+    fireRound() {
+        
     }
 
-
+    
 }
 
-
+// let player1 = new Player ('Triangle', 'red', 34);
+// console.log(player1);

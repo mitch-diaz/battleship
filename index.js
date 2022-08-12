@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-    console.log(event);
+    // console.log(event);
     let html = "";
 
     const gridSize = 10
@@ -31,7 +31,7 @@ window.addEventListener("load", (event) => {
       // console.log({findDiv});
 
         const clickedSquare = {x:square.dataset["positionX"],y:square.dataset["positionY"]}
-        // console.log({clickedSquare});
+        console.log({clickedSquare});
         // console.log('setting');
         shipTest.setLocation(clickedSquare)
       
@@ -41,5 +41,5 @@ window.addEventListener("load", (event) => {
     
     
     
-    console.log("done");
+    // console.log("done");
 });
