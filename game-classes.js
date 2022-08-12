@@ -1,18 +1,52 @@
+class Ship {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Game {
+    constructor() {
+        this.players = [];
+    }
+}
+
+class Player {
+    constructor(name) {
+        this.playerGameBoard = [];
+        this.name = name
+    }
+}
+
+
+// **************************************
+
+
 class Gameboard {
     constructor(theDivs) {
-        this.gameBoard = theDivs;
-        this.ships = [];
 
-        
+    }
+
+    addGameBoard() {
+
     }
 
     addPlayer() {
 
-    };
+    }
 
-    // addGameBoard() {
+    displayScoreboard() {
+        // display scoreboard info:
+        // Hits, Sunk ships, Total points
+    }
+
+    displayFiringReport() {
         
-    // }
+    }
+
+    displaySunkShips() {
+
+    }
 }
 
 class Ship {
@@ -20,7 +54,7 @@ class Ship {
         this.health = size;
         this.shipName = name;
         this.damage = 0;
-        this.location = [];
+        this.location = []
     }
 
     setLocation(clickedDivID){
@@ -55,7 +89,6 @@ class Ship {
         this.location = tempLocation;
         console.log(this.location);
 
-        // We need the logic to keep the ships confined to the gameboard.
     }
 
     receiveDamage() {
@@ -64,8 +97,7 @@ class Ship {
 }
 
 class Player {
-    constructor(playerName, theAmmo,) {
-        this.theName = playerName;
+    constructor(theAmmo,) {
         this.ammo = theAmmo;
     }
 
@@ -77,3 +109,29 @@ class Player {
 }
 
 
+
+
+class Carrier extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+
+}
+
+class Battleship extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Cruiser extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Destroyer extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
