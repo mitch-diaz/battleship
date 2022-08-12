@@ -1,27 +1,3 @@
-class Ship {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
-class Game {
-    constructor() {
-        this.players = [];
-    }
-}
-
-class Player {
-    constructor(name) {
-        this.playerGameBoard = [];
-        this.name = name
-    }
-}
-
-
-// **************************************
-
-
 class Gameboard {
     constructor(theDivs) {
 
@@ -111,27 +87,3 @@ class Player {
 
 
 
-class Carrier extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-
-}
-
-class Battleship extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
-
-class Cruiser extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
-
-class Destroyer extends Ship {
-    constructor(shipHealth) {
-        super(shipHealth);
-    }
-}
