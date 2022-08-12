@@ -54,34 +54,41 @@ class Ship {
         this.health = size;
         this.shipName = name;
         this.damage = 0;
-        this.location = [];
+        this.location = []
     }
 
-    setLocation(clickedDivCoordinates){
-        let tempX = clickedDivCoordinates.x
-        let tempY = clickedDivCoordinates.y
-        const orianetation = "V" //prompt("V or H?: ").toUpperCase
+    setLocation(clickedDivID){
+        const idX = parseInt(clickedDivID[0]);
+        const idY = parseInt(clickedDivID[1]);
+
+        const orianetation = "H" //prompt("V or H?: ").toUpperCase
         let tempLocation = [];
         // console.log("line 13");
-        tempLocation.push(clickedDivCoordinates)
+
+        let clickedDiv = document.getElementById(`${idX}-${idY}`);
+        tempLocation.push(clickedDiv)
         if (orianetation === 'H') {
-            console.log(clickedDivCoordinates)
+            console.log(clickedDivID)
             for (let i = 0; i < this.health - 1; i++) {
-                let tempDivCoordinates = {x: parseInt(tempX), y: parseInt(tempY) + i+1};
-                tempLocation.push(tempDivCoordinates)
+                let nextDiv = document.getElementById(`${idX}-${idY + i + 1}`);
+                tempLocation.push(nextDiv)
             }
+
             console.log(tempLocation);
+
         } else if (orianetation === 'V') {
-            console.log(clickedDivCoordinates)
+            console.log(clickedDivID)
             for (let i = 0; i < this.health - 1; i++) {
-                let tempDivCoordinates = {x: parseInt(tempX) + i+1, y: parseInt(tempY)};
-                tempLocation.push(tempDivCoordinates)
+                let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
+                tempLocation.push(nextDiv)
             }
+
             console.log(tempLocation);
         }
-        this.location.push(clickedDivCoordinates);
+        
+        this.location = tempLocation;
+        console.log(this.location);
 
-        // We need the logic that will keep the ships confined to the gameboard when placed (collision detection?).
     }
 
     receiveDamage() {
@@ -90,18 +97,41 @@ class Ship {
 }
 
 class Player {
-    constructor(name, color, theAmmo) {
-        this.playerName = name;
-        this.playerColor = color;
+    constructor(theAmmo,) {
         this.ammo = theAmmo;
     }
 
-    fireRound() {
-        
+    attack() {
+        return this.health;
     }
 
-    
+
 }
 
-// let player1 = new Player ('Triangle', 'red', 34);
-// console.log(player1);
+
+
+
+class Carrier extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+
+}
+
+class Battleship extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Cruiser extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
+
+class Destroyer extends Ship {
+    constructor(shipHealth) {
+        super(shipHealth);
+    }
+}
