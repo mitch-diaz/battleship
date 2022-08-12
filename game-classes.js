@@ -1,27 +1,3 @@
-class Ship {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
-class Game {
-    constructor() {
-        this.players = [];
-    }
-}
-
-class Player {
-    constructor(name) {
-        this.playerGameBoard = [];
-        this.name = name
-    }
-}
-
-
-// **************************************
-
-
 class Gameboard {
   constructor() {
     
@@ -74,16 +50,17 @@ class Ship {
   }
 
   setLocation(clickedDivID) {
-    const idX = parseInt(clickedDivID[0]);
-    const idY = parseInt(clickedDivID[1]);
+    console.log(clickedDivID);
+    const idX = parseInt(clickedDivID.x);
+    const idY = parseInt(clickedDivID.y);
 
-    const orianetation = "H"; //prompt("V or H?: ").toUpperCase
+    const orientation = "H"; //prompt("V or H?: ").toUpperCase
     let tempLocation = [];
     // console.log("line 13");
 
     let clickedDiv = document.getElementById(`${idX}-${idY}`);
     tempLocation.push(clickedDiv);
-    if (orianetation === "H") {
+    if (orientation === "H") {
       console.log(clickedDivID);
       for (let i = 0; i < this.health - 1; i++) {
         let nextDiv = document.getElementById(`${idX}-${idY + i + 1}`);
@@ -91,7 +68,7 @@ class Ship {
       }
 
       console.log(tempLocation);
-    } else if (orianetation === "V") {
+    } else if (orientation === "V") {
       console.log(clickedDivID);
       for (let i = 0; i < this.health - 1; i++) {
         let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
