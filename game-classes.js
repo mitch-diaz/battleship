@@ -50,20 +50,25 @@ class Ship {
   }
 
   setLocation(clickedDivID) {
-    console.log(clickedDivID);
+    // console.log(clickedDivID);
     const idX = parseInt(clickedDivID.x);
     const idY = parseInt(clickedDivID.y);
 
-    const orientation = "H"; //prompt("V or H?: ").toUpperCase
+    // randomly select h or v
+
+    const orientation = "V"; //prompt("V or H?: ").toUpperCase
     let tempLocation = [];
     // console.log("line 13");
 
     let clickedDiv = document.getElementById(`${idX}-${idY}`);
+    clickedDiv.classList.add("ship")
     tempLocation.push(clickedDiv);
     if (orientation === "H") {
       console.log(clickedDivID);
       for (let i = 0; i < this.health - 1; i++) {
         let nextDiv = document.getElementById(`${idX}-${idY + i + 1}`);
+        console.log({nextDiv});
+        nextDiv.classList.add("ship");
         tempLocation.push(nextDiv);
       }
 
@@ -72,6 +77,7 @@ class Ship {
       console.log(clickedDivID);
       for (let i = 0; i < this.health - 1; i++) {
         let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
+        nextDiv.classList.add("ship");
         tempLocation.push(nextDiv);
       }
 
@@ -98,7 +104,5 @@ class Player {
 
 
 }
-
-
 
 
