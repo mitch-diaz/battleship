@@ -1,31 +1,33 @@
-// class Ship {
-//   constructor(x, y) {
-//     this.x = x;
-//     this.y = y;
-//   }
-// }
+class Ship {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
-// class Game {
-//   constructor() {
-//     this.players = [];
-//   }
-// }
+class Game {
+    constructor() {
+        this.players = [];
+    }
+}
 
-// class Player {
-//   constructor(name) {
-//     this.playerGameBoard = [];
-//     this.name = name;
-//   }
-// }
+class Player {
+    constructor(name) {
+        this.playerGameBoard = [];
+        this.name = name
+    }
+}
+
 
 // **************************************
+
 
 class Gameboard {
   constructor() {
     
   }
 
-  addGameBoard() {
+    addGameBoard() {
     let boardCode = ""
     const gridSize = 10;
     for (let x = 1; x <= gridSize; x++) {
@@ -45,16 +47,22 @@ class Gameboard {
     // if all good add ship
   }
 
-  addPlayer() {}
+    addPlayer() {
 
-  displayScoreboard() {
-    // display scoreboard info:
-    // Hits, Sunk ships, Total points
-  }
+    }
 
-  displayFiringReport() {}
+    displayScoreboard() {
+        // display scoreboard info:
+        // Hits, Sunk ships, Total points
+    }
 
-  displaySunkShips() {}
+    displayFiringReport() {
+        
+    }
+
+    displaySunkShips() {
+
+    }
 }
 
 class Ship {
@@ -107,8 +115,13 @@ class Player {
     this.ammo = theAmmo;
   }
 
-  attack() {
-    return this.health;
-  }
+    attack() {
+        return this.health;
+    }
+
+
 }
+
+
+
 
