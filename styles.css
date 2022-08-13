@@ -1,27 +1,74 @@
 .container {
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0 auto;
-
-}
-
-.square {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(209, 89, 89);
+    background-image: url(asael-pena-unsplash-navyships.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .square {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(168 210 255 / 71%);
     display: inline-block;
-    /* color: rgb(209, 89, 89); */
-}
+    border: 3px solid #060061;
+    border-radius: 10px;
+    margin: 3px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
 
-.square:hover {
+  
+  .square:hover {
     background-color: rgb(77, 42, 42);
-}
-
-#game-board {
-    height: 505px;
-    width: 505px;
+  }
+  
+  #game-board {
+    height: 720px;
+    width: 720px;
     display: inline-block;
-}
-
-.ship {
-    background-color: black;
-}
+    margin: 40px 0 40px 0;
+  }
+  
+  .ship {
+    background-color: #d2530f;
+  }
+  
+  .topDisplayBox {
+    width: 700px;
+    height: 50px;
+    border: 3px solid #1436db;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin: 20px 0 0px 0;
+  }
+  
+  .topDisplayBox p {
+    padding-left: 30px;
+  }
+  
+  .playerBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    margin: 0px 0 40px 0;
+    justify-content: space-evenly;
+  }
+  
+  .playa {
+    width: 200px;
+    height: 100px;
+    border: 3px solid black;
+    color: black;
+    padding: 0 0 0 10px;
+    border-radius: 15px;
+    background-color: #c7f9ff80;
+  }
+  
+  .playa p {
+    font-weight: bolder;
+  }
