@@ -93,6 +93,21 @@ class Ship {
   }
 }
 
+// Click function to update the top box with result of click
+// "It's a miss.", "It's a hit!", "You sank my battleship!", "You sank all of my battleships!"
+
+// document.querySelectorAll('.square').forEach((boardDiv) => {
+//   boardDiv.addEventListener('click', () => {
+//     console.log({boardDiv});
+
+//     const 
+//   })
+// });
+
+
+
+
+
 class Player {
   constructor(theAmmo) {
     this.ammo = theAmmo;
@@ -104,7 +119,5 @@ class Player {
 
 
 }
-
-
 
 
