@@ -48,15 +48,21 @@ h1 {
   
   .topDisplayBox {
     width: 700px;
-    height: 50px;
+    height: 80px;
     border: 3px solid navy;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     margin: 0;
   }
   
   .topDisplayBox p {
-    padding-left: 30px;
+    font-family: 'Black Ops One';
+    font-size: 1.6rem;
+    color: navy;
+    /* padding-left: 30px; */
+    text-align: center;
   }
   
   .playerBoxes {
