@@ -58,6 +58,7 @@ class Ship {
     
     
 
+<<<<<<< HEAD
       if (orientation === "H") {
         
         // console.log(lastDiv);
@@ -227,6 +228,22 @@ class Ship {
     this.location = tempLocation;
     // console.log(this.location);
     // console.log(availableDivs);
+=======
+      console.log(tempLocation);
+    } else if (orientation === "V") {
+      // console.log(clickedDivID);
+      for (let i = 0; i < this.health - 1; i++) {
+        let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
+        nextDiv.classList.add("ship");
+        tempLocation.push(nextDiv);
+      }
+
+      // console.log(tempLocation);
+    }
+
+    this.location = tempLocation;
+    // console.log(this.location);
+>>>>>>> 5c5921ef8a652d239df6ad7553c81c297179f0e0
   }
 
   receiveDamage() {
