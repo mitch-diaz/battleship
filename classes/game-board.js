@@ -3,7 +3,7 @@ class Gameboard {
     
   }
 
-    addGameBoard() {
+  addGameBoard() {
     let boardCode = ""
     const gridSize = 10;
     for (let x = 1; x <= gridSize; x++) {
@@ -12,7 +12,7 @@ class Gameboard {
             Y=${y}</div>`;
       }
     }
-    return boardCode
+    return boardCode;
   }
 
   addShip(coordinates) {
@@ -23,20 +23,4 @@ class Gameboard {
     // if all good add ship
   }
 
-    addPlayer() {
-
-    }
-
-    displayScoreboard() {
-        // display scoreboard info:
-        // Hits, Sunk ships, Total points
-    }
-
-    displayFiringReport() {
-        
-    }
-
-    displaySunkShips() {
-
-    }
 }

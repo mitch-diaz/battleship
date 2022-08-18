@@ -31,18 +31,18 @@ class Ship {
 
       console.log(tempLocation);
     } else if (orientation === "V") {
-      console.log(clickedDivID);
+      // console.log(clickedDivID);
       for (let i = 0; i < this.health - 1; i++) {
         let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
         nextDiv.classList.add("ship");
         tempLocation.push(nextDiv);
       }
 
-      console.log(tempLocation);
+      // console.log(tempLocation);
     }
 
     this.location = tempLocation;
-    console.log(this.location);
+    // console.log(this.location);
   }
 
   receiveDamage() {
