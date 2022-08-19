@@ -9,9 +9,7 @@ class Ship {
   }
 
   setLocation(clickedDiv) {
-    let allShipsLocations = [...document.querySelectorAll(".square.ship")];
     let availableDivs = [...document.querySelectorAll(".square.open")];
-    // console.log(availableDivs);
     let randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
 
     if (clickedDiv === "random") {
@@ -20,9 +18,10 @@ class Ship {
       clickedDiv = randomDiv;
       console.log(clickedDiv);
     }
-    const clickedDivID = {x:clickedDiv.dataset["positionX"],y:clickedDiv.dataset["positionY"]}
-    const idX = parseInt(clickedDivID.x);
-    const idY = parseInt(clickedDivID.y);
+    console.log(clickedDiv);
+    // const clickedDiv = {x:clickedDiv.dataset["positionX"],y:clickedDiv.dataset["positionY"]}
+    const idX = parseInt(clickedDiv.x);
+    const idY = parseInt(clickedDiv.y);
 
     let lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
 
@@ -30,61 +29,34 @@ class Ship {
       console.log('nope next');
       console.log(clickedDiv);
       randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
+      console.log(availableDivs);
       clickedDiv = availableDivs[randomIndexAvailable];
       console.log(clickedDiv);
       this.setLocation(clickedDiv)
     }
    
-    
-
-
-    // console.log(clickedDivID);
-    
-    
     // randomly select h or v
-
     // const orientation = "H"; //prompt("V or H?: ").toUpperCase
     const orientation = "V"; //prompt("V or H?: ").toUpperCase
     let tempLocation = [];
-    // console.log("line 13");
-    // let clickedDiv = document.getElementById(`${idX}-${idY}`);
     
-    // let availableDivs = [...document.querySelectorAll(".square.open")]; 
-
-    // const randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
-    
-    
-    
-    
-    
-
-<<<<<<< HEAD
+      // PLace ships horizontal (x-axis)
       if (orientation === "H") {
-        
-        // console.log(lastDiv);
-        // if (!availableDivs.includes(lastDiv)) {
-        //     console.log('nope')
-        //     return false
-        //    }
-
         if (lastDiv) {
           // clickedDiv.classList.add("ship")
           tempLocation.push(clickedDiv);
-          // console.log(clickedDivID);
           for (let i = 0; i < this.health - 1; i++) {
             let nextDiv = document.getElementById(`${idX}-${idY + i + 1}`);
-            // console.log({nextDiv});
             // nextDiv.classList.add("ship");
             tempLocation.push(nextDiv);
           }
-        
         }
+
 
         let water = []
         tempLocation.forEach((div) => {
           const idX = parseInt(div.dataset["positionX"]);
           const idY = parseInt(div.dataset["positionY"]);
-
 
           const topLeft = document.getElementById(`${idX - 1}-${idY - 1}`);
           const topCenter = document.getElementById(`${idX}-${idY - 1}`);
@@ -102,66 +74,35 @@ class Ship {
           divsAround.forEach((div) => {
             if (!tempLocation.includes(div) && !water.includes(div)) {
               water.push(div)
-              console.log(div);
             }
           })
-
+        });
           
-          
-          
-          
-          
-          // console.log(idX);
-          // console.log(idY);
-          // let topCenter = 
-          // if () {
-            
-            // }
-          });
-          
-        
-        // console.log('line 85');
         water.forEach((div) => {
           if (div){
             div.classList.remove("open");
             div.classList.add("water");
             this.water.push(div);
           }
-            // console.log({div});
-            // console.log({allShipsLocations});
+        })
 
-          }
-        )
-
-
-
-        // console.log(tempLocation);
-        // console.log(water);
-
+          //  Place ships vertical (y-axis)
       } else if (orientation === "V") {
           let lastDiv = document.getElementById(`${idX + this.health - 1}-${idY}`);
-        // console.log(lastDiv);
-        if (!availableDivs.includes(lastDiv)) {
+          if (!availableDivs.includes(lastDiv)) {
             console.log('check for last dive VERTICAL FALSE')
             randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
             clickedDiv = availableDivs[randomIndexAvailable];
-            console.log(clickedDiv);
-            
             this.setLocation(clickedDiv)
-           }
+          }
 
 
         if (lastDiv) {
-          // clickedDiv.classList.add("ship")
           tempLocation.push(clickedDiv);
-          // console.log(clickedDivID);
           for (let i = 0; i < this.health - 1; i++) {
             let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
-            // console.log({nextDiv});
-            // nextDiv.classList.add("ship");
             tempLocation.push(nextDiv);
           }
-        
         }
 
         let water = []
@@ -191,59 +132,23 @@ class Ship {
               
             }
           })
-
-          
-          
-          
-          
-          
-          // console.log(idX);
-          // console.log(idY);
-          // let topCenter = 
-          // if () {
-            
-            // }
         });
           
-        
-        // console.log('line 85');
         water.forEach((div) => {
           if (div){
             div.classList.remove("open");
             div.classList.add("water");
             this.water.push(div);
           }
-            // console.log({div});
-            // console.log({allShipsLocations});
-
-          }
-        )
-
+        })
       } 
+
     tempLocation.forEach((div) => {
       div.classList.remove('open');
       div.classList.add('ship');
     })
 
     this.location = tempLocation;
-    // console.log(this.location);
-    // console.log(availableDivs);
-=======
-      console.log(tempLocation);
-    } else if (orientation === "V") {
-      // console.log(clickedDivID);
-      for (let i = 0; i < this.health - 1; i++) {
-        let nextDiv = document.getElementById(`${idX + i + 1}-${idY}`);
-        nextDiv.classList.add("ship");
-        tempLocation.push(nextDiv);
-      }
-
-      // console.log(tempLocation);
-    }
-
-    this.location = tempLocation;
-    // console.log(this.location);
->>>>>>> 5c5921ef8a652d239df6ad7553c81c297179f0e0
   }
 
   receiveDamage() {
