@@ -34,13 +34,6 @@ h1 {
   background-color: rgb(19, 213, 216);
 }
 
-#game-board {
-  height: 720px;
-  width: 720px;
-  display: inline-block;
-  margin: 40px 0 40px 0;
-}
-
 .topDisplayBox {
   width: 700px;
   height: 80px;
@@ -82,13 +75,13 @@ h1 {
   font-family: "Black Ops One";
 }
 
-.ship {
+/* .ship {
   background-color: #d2530f;
-} */
+}
 
 .water { 
   background-color: blue;
-}
+} */
 
 .hit {
   background-color: rgb(128, 0, 6);

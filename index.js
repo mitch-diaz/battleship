@@ -17,7 +17,6 @@ const cleanBoard = () => {
     }
   }
 
-  // Add all the divs to the HTML
   document.querySelector("#game-board").innerHTML = boardCode;
 };
 
@@ -26,26 +25,20 @@ window.addEventListener("load", (event) => {
   let player1 = new Player("Mitch");
   let player2 = new Player("Zequi");
 
-  document.getElementById('p1Name').innerText = player1.name
-  document.getElementById('p2Name').innerText = player2.name
-
+  document.getElementById("p1Name").innerText = player1.name;
+  document.getElementById("p2Name").innerText = player2.name;
 
   gameBoard.players.push(player1);
   gameBoard.players.push(player2);
 
-  // let boardCode = "";
-  // const gridSize = 10;
-  // for (let x = 1; x <= gridSize; x++) {
-  //   for (let y = 1; y <= gridSize; y++) {
-  //     boardCode += `<div class="square open" id=${x}-${y} data-position-x="${x}" data-position-y="${y}"></div>`;
-  //   }
-  // }
+  document.querySelector("#game-board").style.display = "inline-block";
+  document.querySelector("#game-board").style.height = "720px";
+  document.querySelector("#game-board").style.width = "720px";
+  document.querySelector("#game-board").style.margin = "40px 0 40px 0";
+
+  //// player 1 set up
+
   cleanBoard();
-
-  // Add all the divs to the HTML
-  // document.querySelector("#game-board").innerHTML = boardCode;
-
-  
   ships.forEach((elem) => {
     let newShip = new Ship(elem.health, elem.name, elem.model);
     player1.ships.push(newShip);
@@ -57,8 +50,20 @@ window.addEventListener("load", (event) => {
     player1.board.push(square);
   });
 
-  cleanBoard();
+  player1.displayBoard();
 
+  document.querySelectorAll(".square").forEach((square) => {
+    square.addEventListener("click", () => {
+      // console.log(square);
+      gameBoard.takeShot(player1);
+      player1.checkIfhit(square);
+      document.getElementById("p1Attempts").innerText = player1.attempts;
+    });
+  });
+
+  /// player 2 set up
+
+  cleanBoard();
   ships.forEach((elem) => {
     let newShip = new Ship(elem.health, elem.name, elem.model);
     player2.ships.push(newShip);
@@ -70,50 +75,35 @@ window.addEventListener("load", (event) => {
     player2.board.push(square);
   });
 
-  
-  
-  
-  document.getElementById("playerOne").addEventListener("click", () => {
-    player1.displayBoard();
+  player2.displayBoard();
 
-    setTimeout(function () {
-          
-      document.querySelectorAll(".square").forEach((square) => {
-        square.addEventListener("click", () => {
-          // console.log(square);
-          gameBoard.takeShot(player1);
-          player1.checkIfhit(square);
-          document.getElementById('p1Attempts').innerText = player1.attempts
-        });
-      });
-        }, 500);
-
+  document.querySelectorAll(".square").forEach((square) => {
+    square.addEventListener("click", () => {
+      // console.log(square);
+      gameBoard.takeShot(player2);
+      player2.checkIfhit(square);
+      document.getElementById("p2Attempts").innerText = player2.attempts;
+    });
   });
 
- 
- 
- 
- 
- 
- 
+  //// ----------------------------------------------------------
+
+  document.getElementById("playerOne").addEventListener("click", () => {
+    player1.displayBoard();
+    document.getElementById("currentPlayer").innerText = player1.name;
+  });
+
   document.getElementById("playerTwo").addEventListener("click", () => {
     player2.displayBoard();
 
-    setTimeout(function () {
-          
-      document.querySelectorAll(".square").forEach((square) => {
-        square.addEventListener("click", () => {
-          // console.log(square);
-          gameBoard.takeShot(player2);
-          player2.checkIfhit(square);
-          document.getElementById('p2Attempts').innerText = player2.attempts
-        });
-      });
-        }, 500);
-
+    document.getElementById("currentPlayer").innerText = player2.name;
   });
 
   cleanBoard();
+
+  document.querySelectorAll(".square").forEach((square) => {
+    square.style.backgroundColor = 'blue'
+  });
 
   console.log("modal opens");
 });

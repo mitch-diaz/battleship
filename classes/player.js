@@ -38,12 +38,17 @@ class Player {
   }
 
   displayBoard() {
-    document.querySelector("#game-board").innerHTML = ""
+    // console.log(this.board);
+    let gameBoardView = document.getElementById('game-board');
+    gameBoardView.innerHTML = ""
     this.board.forEach((div) => {
-      document.querySelector("#game-board").appendChild(div);
-    });
+
+        gameBoardView.appendChild(div)
+    })
     
-  }
+    }
+    
+  
 
   
 

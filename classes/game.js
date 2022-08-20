@@ -13,7 +13,7 @@ class Game {
   
   takeShot (playerIn) {
     this.players.forEach((player) => {
-      if (playerIn === player) {
+      if (playerIn.name === player.name) {
         player.attempts++
       }
     })
