@@ -1,6 +1,8 @@
 class Game {
   constructor() {
     this.ships = []
+    this.shipsToHit = 17
+    this.attempts = 0
     
   }
 
@@ -16,12 +18,28 @@ class Game {
     return boardCode
   }
 
-  addShip(coordinates) {
-    // get coordinates
-    // pick direction H or V
-    // count horizontally or vertically if enough space
-    // collision check
-    // if all good add ship
+  takeShot () {
+    this.attempts++
+    document.getElementById('p1Attempts').innerText = this.attempts
+  }
+
+  checkIfhit(coordinates) {
+    let hitShip = this.ships.filter(ship => ship.location.includes(coordinates));
+    if (coordinates.classList.contains('ship')) {
+      // console.log(hitShip);
+      this.shipsToHit--
+      coordinates.classList.add('hit')
+      console.log('hit');
+      hitShip[0].receiveDamage()
+      if (this.shipsToHit === 0) {
+        setTimeout(function () {
+            alert('game over');
+          }, 1000);
+      }
+    } else {
+      coordinates.classList.add('miss')
+      console.log('miss');
+    }
   }
 
     addPlayer() {

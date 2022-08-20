@@ -3,7 +3,7 @@ class Ship {
     this.health = size;
     this.shipName = name;
     this.damage = 0;
-    this.isSunk = this.health - this.damage === 0;
+    this.isSunk = false;
     this.location = [];
     this.water = [];
   }
@@ -23,18 +23,6 @@ class Ship {
     };
     let idX = parseInt(clickedDivId.x);
     let idY = parseInt(clickedDivId.y);
-
-    // let lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
-    // while (!availableDivs.includes(clickedDiv) || !availableDivs.includes(lastDiv)) {
-    //   randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
-    //   clickedDiv = availableDivs[randomIndexAvailable];
-    //   clickedDivId = {x:clickedDiv.dataset["positionX"],y:clickedDiv.dataset["positionY"]}
-    //   idX = parseInt(clickedDivId.x);
-    //   idY = parseInt(clickedDivId.y);
-    //   console.log(availableDivs);
-    //   console.log({clickedDiv});
-    //   lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
-    // }
 
     // randomly select h or v
 
@@ -202,5 +190,12 @@ class Ship {
 
   receiveDamage() {
     this.damage++;
+    // console.log(this.isSunk);
+    if (this.health - this.damage === 0) {
+      this.water.forEach((elem) => {
+        elem.classList.add('miss')
+      });
+      console.log(`You sunk my ${this.shipName}`);
+    }
   }
 }

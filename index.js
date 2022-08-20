@@ -15,8 +15,9 @@ window.addEventListener("load", (event) => {
 
   document.querySelectorAll(".square").forEach((square) => {
     square.addEventListener("click", () => {
-      console.log(square);
-      
+      // console.log(square);
+      gameBoard.takeShot()
+      gameBoard.checkIfhit(square)
     });
   });
 
@@ -32,6 +33,8 @@ window.addEventListener("load", (event) => {
       shipLocationCounter++
     });
   });
+
+  console.log(gameBoard.ships);
 
 
  
