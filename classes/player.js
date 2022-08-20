@@ -5,6 +5,7 @@ class Player {
     this.shipsToHit = 22;
     this.attempts = 0;
     this.board = [];
+    this.gameBoard = ""
   }
 
   checkIfhit(coordinates) {
@@ -25,9 +26,15 @@ class Player {
       if (this.shipsToHit === 0) {
         let theMsg = document.querySelector("#messageArea, span");
         theMsg.innerText = `You sank all my battleships in ${this.attempts} attempts.`;
-        setTimeout(function () {
-          alert("game over");
-        }, 500);
+        // setTimeout(function () {
+        //   alert("game over");
+        // }, 500);
+        let player2 = this.gameBoard.players[1]
+
+        console.log(player2);
+
+        player2.displayBoard();
+    document.getElementById("currentPlayer").innerText = player2.name;
       }
     } else {
       coordinates.classList.add("miss");

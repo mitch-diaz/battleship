@@ -29,7 +29,9 @@ window.addEventListener("load", (event) => {
   document.getElementById("p2Name").innerText = player2.name;
 
   gameBoard.players.push(player1);
+  player1.gameBoard = gameBoard
   gameBoard.players.push(player2);
+  player2.gameBoard = gameBoard
 
   document.querySelector("#game-board").style.display = "inline-block";
   document.querySelector("#game-board").style.height = "720px";
@@ -107,6 +109,11 @@ window.addEventListener("load", (event) => {
 
   console.log("modal opens");
     $('#exampleModal').modal('show');
+
+  document.getElementById('bsButton').addEventListener('click', () => {
+    player1.displayBoard();
+    document.getElementById("currentPlayer").innerText = player1.name;
+  });
 
 });
 
