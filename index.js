@@ -3,11 +3,13 @@ window.addEventListener("load", (event) => {
   let html = gameBoard.addGameBoard();
 
   const ships = [
-    { name: "Aircraft Carrier", health: 5 },
-    { name: "Battleship", health: 4 },
-    { name: "Cruiser", health: 3 },
-    { name: "Frigate", health: 3 },
-    { name: "Destroyer", health: 2 },
+    { name: "USS Impulse (PG-68)",model: "Aircraft Carrier", health: 5 },
+    { name: "USS Alacrity (PG-87)",model: "Battleship", health: 4 },
+    { name: "USS Haste (PG-92)",model: "Cruiser", health: 3 },
+    { name: "USS Leader (PYc-42)",model: "Frigate", health: 3 },
+    { name: "USS Ossipee (WPG-50)",model: "Frigate", health: 3 },
+    { name: "USS Winnemucca (PC-1145)",model: "Destroyer", health: 2 },
+    { name: "USS Alacrity (PG-87)",model: "Destroyer", health: 2 },
   ];
 
   // Add all the divs to the HTML

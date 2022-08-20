@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.ships = []
-    this.shipsToHit = 17
+    this.shipsToHit = 22
     this.attempts = 0
     
   }
@@ -34,7 +34,7 @@ class Game {
       if (this.shipsToHit === 0) {
         setTimeout(function () {
             alert('game over');
-          }, 1000);
+          }, 500);
       }
     } else {
       coordinates.classList.add('miss')
