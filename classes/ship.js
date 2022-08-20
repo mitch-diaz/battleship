@@ -61,8 +61,6 @@ class Ship {
         };
         idX = parseInt(clickedDivId.x);
         idY = parseInt(clickedDivId.y);
-        console.log(availableDivs);
-        console.log({ clickedDiv });
         lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
       }
       if (lastDiv) {
@@ -134,8 +132,6 @@ class Ship {
         };
         idX = parseInt(clickedDivId.x);
         idY = parseInt(clickedDivId.y);
-        console.log(availableDivs);
-        console.log({ clickedDiv });
         lastDiv = document.getElementById(`${idX + this.health - 1}-${idY}`);
       }
       if (lastDiv) {
@@ -202,10 +198,6 @@ class Ship {
 
     this.location = tempLocation;
 
-    console.log(this.shipName);
-    console.log("this.location");
-    console.log(this.location);
-    console.log(this.water);
   }
 
   receiveDamage() {

@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  let gameBoard = new Gameboard();
+  let gameBoard = new Game();
   let html = gameBoard.addGameBoard();
 
   const ships = [
@@ -16,8 +16,7 @@ window.addEventListener("load", (event) => {
   document.querySelectorAll(".square").forEach((square) => {
     square.addEventListener("click", () => {
       console.log(square);
-      let theMsg = document.querySelector("#messageArea, span");
-      theMsg.innerText = `You sank my battleship!`;
+      
     });
   });
 

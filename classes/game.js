@@ -1,4 +1,4 @@
-class Gameboard {
+class Game {
   constructor() {
     this.ships = []
     
