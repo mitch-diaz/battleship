@@ -11,8 +11,7 @@ class Game {
     const gridSize = 10;
     for (let x = 1; x <= gridSize; x++) {
       for (let y = 1; y <= gridSize; y++) {
-        boardCode += `<div class="square open" id=${x}-${y} data-position-x="${x}" data-position-y="${y}">X=${x}
-            Y=${y}</div>`;
+        boardCode += `<div class="square open" id=${x}-${y} data-position-x="${x}" data-position-y="${y}"></div>`;
       }
     }
     return boardCode
@@ -29,9 +28,14 @@ class Game {
       // console.log(hitShip);
       this.shipsToHit--
       coordinates.classList.add('hit')
-      console.log('hit');
+      // console.log('hit');
+      
+      let theMsg = document.querySelector('#messageArea, span');
+      theMsg.innerText = `It's a hit!`;
       hitShip[0].receiveDamage()
       if (this.shipsToHit === 0) {
+        let theMsg = document.querySelector('#messageArea, span');
+        theMsg.innerText = `You sank all my battleships in ${this.attempts} attempts.`;
         setTimeout(function () {
             alert('game over');
           }, 500);
@@ -39,6 +43,8 @@ class Game {
     } else {
       coordinates.classList.add('miss')
       console.log('miss');
+      let theMsg = document.querySelector('#messageArea, span');
+      theMsg.innerText = `It's a miss.`;
     }
   }
 
