@@ -9,22 +9,22 @@ class Ship {
   }
 
   setLocation(clickedDiv) {
-    let availableDivs = [...document.querySelectorAll(".square.open")];
+    let availableDivs = [...document.querySelectorAll(".open")];
     let randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
-
+    console.log(availableDivs);
     if (clickedDiv === "random") {
       console.log(clickedDiv);
       let randomDiv = availableDivs[randomIndexAvailable];
       clickedDiv = randomDiv;
-      console.log(clickedDiv);
     }
     console.log(clickedDiv);
-    // const clickedDiv = {x:clickedDiv.dataset["positionX"],y:clickedDiv.dataset["positionY"]}
-    const idX = parseInt(clickedDiv.x);
-    const idY = parseInt(clickedDiv.y);
+    const clickedDivId = {x:clickedDiv.dataset["positionX"],y:clickedDiv.dataset["positionY"]}
+    const idX = parseInt(clickedDivId.x);
+    const idY = parseInt(clickedDivId.y);
+    console.log(idX);
 
     let lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
-
+    console.log(lastDiv);
     if (!availableDivs.includes(clickedDiv)) {
       console.log('nope next');
       console.log(clickedDiv);
@@ -37,17 +37,19 @@ class Ship {
    
     // randomly select h or v
     // const orientation = "H"; //prompt("V or H?: ").toUpperCase
-    const orientation = "V"; //prompt("V or H?: ").toUpperCase
+    const orientation = "H"; //prompt("V or H?: ").toUpperCase
     let tempLocation = [];
     
       // PLace ships horizontal (x-axis)
       if (orientation === "H") {
         if (lastDiv) {
-          // clickedDiv.classList.add("ship")
+          clickedDiv.classList.add("ship")
+          clickedDiv.classList.remove("open")
           tempLocation.push(clickedDiv);
           for (let i = 0; i < this.health - 1; i++) {
             let nextDiv = document.getElementById(`${idX}-${idY + i + 1}`);
-            // nextDiv.classList.add("ship");
+            nextDiv.classList.add("ship");
+            nextDiv.classList.remove("open");
             tempLocation.push(nextDiv);
           }
         }

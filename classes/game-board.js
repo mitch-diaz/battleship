@@ -9,7 +9,7 @@ class Gameboard {
     const gridSize = 10;
     for (let x = 1; x <= gridSize; x++) {
       for (let y = 1; y <= gridSize; y++) {
-        boardCode += `<div class="square" id=${x}-${y} data-position-x="${x}" data-position-y="${y}">X=${x}
+        boardCode += `<div class="square open" id=${x}-${y} data-position-x="${x}" data-position-y="${y}">X=${x}
             Y=${y}</div>`;
       }
     }

@@ -9,15 +9,15 @@ window.addEventListener("load", (event) => {
   document.querySelector("#game-board").innerHTML = html;
   
   document.querySelectorAll(".square").forEach((square) => {
-  
+    
     square.addEventListener("click", () => {
-    // TODO: write some code here
-      // console.log({square});
-      const clickedSquare = {x:square.dataset["positionX"],y:square.dataset["positionY"]}
-      shipTest.setLocation(clickedSquare)
+      console.log(square)
       let theMsg = document.querySelector('#messageArea, span');
       theMsg.innerText = `You sank my battleship!`;
     });
   }); 
+  console.log(shipTest);
+  shipTest.setLocation('random');
+  console.log(shipTest);
 });
 
