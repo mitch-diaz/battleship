@@ -196,7 +196,7 @@ class Ship {
       // this.water.forEach((elem) => {
       //   elem.classList.add('miss')
       // });
-      console.log(`You sunk my ${this.model} ${this.shipName}`);
+      // console.log(`You sunk my ${this.model} ${this.shipName}`);
       let theMsg = document.querySelector('#messageArea, span');
       theMsg.innerText = `You sunk my ${this.model}
       ${this.shipName}`;

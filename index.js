@@ -41,6 +41,12 @@ window.addEventListener("load", (event) => {
   console.log(shipLocationCounter);
   console.log(gameBoard.shipsToHit);
 
+  
+    $('#exampleModal').modal('show');
 
- 
+  
 });
+
+
+
+
