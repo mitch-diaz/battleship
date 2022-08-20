@@ -33,20 +33,20 @@ class Game {
         
     }
 
-    displayModal() {
-      if (this.shipsToHit === 0) {
-        let T3GameOverTitle = document.querySelector('.modal-title');
-        T3GameOverTitle.innerText = `Player 2 is the winner!`;
-        let T3GameOverText = document.querySelector('.modal-body');
-        T3GameOverText.innerHTML = `<p>Player 1 sank all battleships in ${this.attempts} attempts.
-        <br>
-        Player 2 sank all battleships in ${this.attempts} attempts.
-        <br>
-        </p>`;
-        t2ModalButton = document.querySelector('#bsButton');
-        t2ModalButton.innerText = `Start new game?`;
-      }
-    }
+    // displayModal() {
+    //   if (this.shipsToHit === 0) {
+    //     let T3GameOverTitle = document.querySelector('.modal-title');
+    //     T3GameOverTitle.innerText = `Player 2 is the winner!`;
+    //     let T3GameOverText = document.querySelector('.modal-body');
+    //     T3GameOverText.innerHTML = `<p>Player 1 sank all battleships in ${this.attempts} attempts.
+    //     <br>
+    //     Player 2 sank all battleships in ${this.attempts} attempts.
+    //     <br>
+    //     </p>`;
+    //     t2ModalButton = document.querySelector('#bsButton');
+    //     t2ModalButton.innerText = `Start new game?`;
+    //   }
+    // }
 }
 
 
