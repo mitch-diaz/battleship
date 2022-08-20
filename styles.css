@@ -82,13 +82,13 @@ h1 {
   font-family: "Black Ops One";
 }
 
-/* .ship {
+.ship {
   background-color: #d2530f;
 } */
 
-/* .water {
+.water { 
   background-color: blue;
-} */
+}
 
 .hit {
   background-color: rgb(128, 0, 6);
