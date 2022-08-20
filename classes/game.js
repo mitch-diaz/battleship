@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.ships = []
-    this.shipsToHit = 22
+    this.shipsToHit = 0
     this.attempts = 0
     
   }

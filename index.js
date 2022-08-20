@@ -24,7 +24,7 @@ window.addEventListener("load", (event) => {
   });
 
   ships.forEach((elem) => {
-    let newShip = new Ship(elem.health, elem.name);
+    let newShip = new Ship(elem.health, elem.name, elem.model);
     newShip.setLocation("random");
     gameBoard.ships.push(newShip);
   });
@@ -36,7 +36,10 @@ window.addEventListener("load", (event) => {
     });
   });
 
+  gameBoard.shipsToHit = shipLocationCounter
   console.log(gameBoard.ships);
+  console.log(shipLocationCounter);
+  console.log(gameBoard.shipsToHit);
 
 
  

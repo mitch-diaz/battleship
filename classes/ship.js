@@ -1,7 +1,8 @@
 class Ship {
-  constructor(size, name) {
+  constructor(size, name, model) {
     this.health = size;
     this.shipName = name;
+    this.model = model;
     this.damage = 0;
     this.isSunk = false;
     this.location = [];
@@ -195,7 +196,7 @@ class Ship {
       this.water.forEach((elem) => {
         elem.classList.add('miss')
       });
-      console.log(`You sunk my ${this.shipName}`);
+      console.log(`You sunk my ${this.model} ${this.shipName}`);
     }
   }
 }
