@@ -47,7 +47,11 @@ window.addEventListener("load", (event) => {
   });
 
   document.querySelectorAll(".square").forEach((square) => {
-    player1.board.push(square);
+    square.addEventListener("click", () => {
+      // console.log(square);
+      gameBoard.takeShot()
+      gameBoard.checkIfhit(square)
+    });
   });
 
   player1.displayBoard();
@@ -91,6 +95,11 @@ window.addEventListener("load", (event) => {
   document.getElementById("playerOne").addEventListener("click", () => {
     player1.displayBoard();
     document.getElementById("currentPlayer").innerText = player1.name;
+  let shipLocationCounter = 0
+  gameBoard.ships.forEach((elem) => {
+    elem.location.forEach((loc) => {
+      shipLocationCounter++
+    });
   });
 
   document.getElementById("playerTwo").addEventListener("click", () => {
@@ -105,5 +114,27 @@ window.addEventListener("load", (event) => {
     square.style.backgroundColor = 'blue'
   });
 
+    setTimeout(function () {
+          
+      document.querySelectorAll(".square").forEach((square) => {
+        square.addEventListener("click", () => {
+          // console.log(square);
+          gameBoard.takeShot(player2);
+          player2.checkIfhit(square);
+          document.getElementById('p2Attempts').innerText = player2.attempts
+        });
+      });
+        }, 500);
+
+    });
+
+    $('#exampleModal').modal('show');
+
+  cleanBoard();
+ 
   console.log("modal opens");
 });
+
+
+
+
