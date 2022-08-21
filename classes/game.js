@@ -58,7 +58,6 @@ class Game {
 // t2ModalTitle.innerText = `Well done player 1!`;
 // let t2ModalText = document.querySelector('.modal-body');
 // t2ModalText.innerHTML = `<p>You sank all battleships in ${this.attempts} attempts. <br> <br> Ready player 2?</p>`;
-
 // let t2ModalButton = document.querySelector('#bsButton');
 // t2ModalButton.innerText = `Start player 2 game`;
 // console.log({t2ModalButton});

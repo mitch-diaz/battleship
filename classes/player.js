@@ -34,7 +34,14 @@ class Player {
         console.log(player2);
 
         player2.displayBoard();
-    document.getElementById("currentPlayer").innerText = player2.name;
+        document.getElementById("currentPlayer").innerText = player2.name;
+        let t2ModalTitle = document.querySelector('.modal-title');
+        t2ModalTitle.innerText = `Well done player 1!`;
+        let t2ModalText = document.querySelector('.modal-body');
+        t2ModalText.innerHTML = `<p>You sank all battleships in ${this.attempts} attempts. <br> <br> Ready player 2?</p>`;
+        let t2ModalButton = document.querySelector('#bsButton');
+        t2ModalButton.innerText = `Start player 2 game`;
+        $('#exampleModal').modal('show');
       }
     } else {
       coordinates.classList.add("miss");
@@ -49,14 +56,8 @@ class Player {
     let gameBoardView = document.getElementById('game-board');
     gameBoardView.innerHTML = ""
     this.board.forEach((div) => {
-
         gameBoardView.appendChild(div)
     })
-    
-    }
-    
-  
-
-  
+  }
 
 }
