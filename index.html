@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Intro Modal -->
     <div
       class="modal fade"
       id="introModal"
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- End Player 1 Modal -->
     <div
       class="modal fade"
       id="endPlayer1Modal"
@@ -128,7 +128,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Battleship rules:
+              Well done!
             </h5>
             <button
               type="button"
@@ -138,28 +138,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <ul>
-              <li>
-                There are 7 ships hidden on the grid and they may be positioned
-                vertically or horizontally.
-              </li>
-              <li>
-                Each ship has a total length of between 2 and 5 consecutive
-                squares.
-              </li>
-              <li>Click on the grid to guess where the ships are located.</li>
-              <li>
-                To sink a ship you have to click all of that ship's squares.
-              </li>
-              <li>
-                The message box above the grid will tell you if it’s a hit or
-                miss, and when you have sunk a ship.
-              </li>
-              <li>
-                The player that can sink all their battleships in the fewest
-                attempts wins the game.
-              </li>
-            </ul>
+            <p>You sank all battleships in <span id="player1Attempts"> </span> attempts. <br> <br> </p>
             <h6>Ready player 2?</h6>
           </div>
           <div class="modal-footer">
@@ -170,6 +149,46 @@
               data-bs-dismiss="modal"
             >
               <span>Start player 2 game</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Player 2 Modal -->
+    <div
+      class="modal fade"
+      id="endPlayer2Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="endOfGame">
+              <span> </span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p> <span id="player1Summary"> </span>
+            <br> <span id="player2Summary"> </span>
+          </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="endPlayer1ModalButton"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              <span>Start new game</span>
             </button>
           </div>
         </div>

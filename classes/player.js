@@ -44,12 +44,11 @@ class Player {
               console.log(this.gameBoard.players[currentPlayerIndex + 1]);
               this.gameBoard.players[currentPlayerIndex + 1].displayBoard();
               document.getElementById("currentPlayer").innerText = this.gameBoard.players[1].name;
+              document.getElementById("player1Attempts").innerText = this.attempts;
               $('#endPlayer1Modal').modal('show');
             } else if (this.gameBoard.players[lastPlayerIndex].name === this.name){
   
-                setTimeout(function () {
-                  alert("game over");
-                }, 500);
+              $('#endPlayer2Modal').modal('show');
             }
             
           });
