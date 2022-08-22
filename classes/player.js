@@ -44,13 +44,7 @@ class Player {
               console.log(this.gameBoard.players[currentPlayerIndex + 1]);
               this.gameBoard.players[currentPlayerIndex + 1].displayBoard();
               document.getElementById("currentPlayer").innerText = this.gameBoard.players[1].name;
-            //   let t2ModalTitle = document.querySelector('.modal-title');
-            //   t2ModalTitle.innerText = `Well done player 1!`;
-            //   let t2ModalText = document.querySelector('.modal-body');
-            //   t2ModalText.innerHTML = `<p>You sank all battleships in ${this.attempts} attempts. <br> <br> Ready player 2?</p>`;
-            //   let t2ModalButton = document.querySelector('#bsButton');
-            //   t2ModalButton.innerText = `Start player 2 game`;
-            //   $('#exampleModal').modal('show');
+              $('#endPlayer1Modal').modal('show');
             } else if (this.gameBoard.players[lastPlayerIndex].name === this.name){
   
                 setTimeout(function () {

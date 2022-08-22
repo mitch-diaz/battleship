@@ -108,9 +108,9 @@ window.addEventListener("load", (event) => {
   });
 
   console.log("modal opens");
-    $('#exampleModal').modal('show');
+    $('#introModal').modal('show');
 
-  document.getElementById('bsButton').addEventListener('click', () => {
+  document.getElementById('introModalButton').addEventListener('click', () => {
     player1.displayBoard();
     document.getElementById("currentPlayer").innerText = player1.name;
   });
