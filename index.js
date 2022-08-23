@@ -107,12 +107,17 @@ window.addEventListener("load", (event) => {
     square.style.backgroundColor = 'blue'
   });
 
-  console.log("modal opens");
+  // console.log("modal opens");
     $('#introModal').modal('show');
 
   document.getElementById('introModalButton').addEventListener('click', () => {
     player1.displayBoard();
     document.getElementById("currentPlayer").innerText = player1.name;
+  });
+
+  document.getElementById("startNewGameButton").addEventListener("click", () => {
+
+    location.reload();
   });
 
 });
