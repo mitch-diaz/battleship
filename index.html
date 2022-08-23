@@ -198,6 +198,48 @@
       </div>
     </div>
 
+    <!-- Tied Game Modal -->
+    <div
+      class="modal fade"
+      id="tiedGameModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tieGame">
+              <span></span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <span id="player1Summary"> </span> <br />
+              <span id="player2Summary"> </span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="startNewGameButton"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              <span>Start new game</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <script src="./classes/game.js"></script>
     <script src="./classes/ship.js"></script>
     <script src="./classes/player.js"></script>

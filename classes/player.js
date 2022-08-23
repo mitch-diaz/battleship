@@ -53,8 +53,14 @@ class Player {
             
             let winner = player1.attempts < player2.attempts ? player1.name : player2.name;
 
+            
 
+            let gameTied = document.getElementById('tiedGameModal');
+            gameTied.innerText = `This game ends in a tie. Play again?`;
+            $("#tiedGameModal").modal("show");
 
+            
+            
             let GameOverTitle = document.getElementById("endOfGame");
             GameOverTitle.innerText = `${winner} is the winner!`;
 
