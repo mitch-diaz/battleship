@@ -28,9 +28,9 @@ window.addEventListener("load", (event) => {
   document.getElementById("p1Name").innerText = player1.name;
   document.getElementById("p2Name").innerText = player2.name;
 
-  gameBoard.players.push(player1);
+  gameBoard.addPlayer(player1);
   player1.gameBoard = gameBoard
-  gameBoard.players.push(player2);
+  gameBoard.addPlayer(player2);
   player2.gameBoard = gameBoard
 
   document.querySelector("#game-board").style.display = "inline-block";

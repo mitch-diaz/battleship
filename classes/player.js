@@ -42,6 +42,13 @@ class Player {
               this.gameBoard.players[1].name;
             document.getElementById("player1Attempts").innerText =
               this.attempts;
+            
+              setTimeout(function () {
+            document.getElementById("messageArea").innerText = '';
+          }, 2000);
+
+             
+              
             $("#endPlayer1Modal").modal("show");
           } else if (
             this.gameBoard.players[lastPlayerIndex].name === this.name
