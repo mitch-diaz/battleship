@@ -50,14 +50,19 @@ class Player {
             
             let player1 = this.gameBoard.players[0];
             let player2 = this.gameBoard.players[1];
-            
-            let winner = player1.attempts < player2.attempts ? player1.name : player2.name;
 
-            
+            if(player1.attempts === player2.attempts) {
 
-            let gameTied = document.getElementById('tiedGameModal');
+            let gameTied = document.getElementById('endOfGameTie');
             gameTied.innerText = `This game ends in a tie. Play again?`;
             $("#tiedGameModal").modal("show");
+
+            } else {
+              let winner = player1.attempts < player2.attempts ? player1.name : player2.name;
+
+            
+
+            
 
             
             
@@ -71,6 +76,9 @@ class Player {
             p2Summary.innerText = `${player2.name} sank all battleships in ${player2.attempts} attempts.`;
 
             $("#endPlayer2Modal").modal("show");
+            }
+            
+            
           }
         });
       }
@@ -90,3 +98,6 @@ class Player {
     });
   }
 }
+
+
+  

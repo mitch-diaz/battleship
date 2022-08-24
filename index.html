@@ -199,6 +199,7 @@
     </div>
 
     <!-- Tied Game Modal -->
+
     <div
       class="modal fade"
       id="tiedGameModal"
@@ -209,7 +210,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="tieGame">
+            <h5 class="modal-title" id="endOfGameTie">
               <span></span>
             </h5>
             <button
@@ -221,14 +222,14 @@
           </div>
           <div class="modal-body">
             <p>
-              <span id="player1Summary"> </span> <br />
-              <span id="player2Summary"> </span>
+              <!-- <span id="player1Summary"> </span> <br />
+              <span id="player2Summary"> </span> -->
             </p>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              id="startNewGameButton"
+              id="startNewGameButtonTie"
               class="btn btn-primary"
               data-bs-dismiss="modal"
             >
@@ -238,7 +239,6 @@
         </div>
       </div>
     </div>
-
 
     <script src="./classes/game.js"></script>
     <script src="./classes/ship.js"></script>

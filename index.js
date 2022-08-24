@@ -120,6 +120,14 @@ window.addEventListener("load", (event) => {
     location.reload();
   });
 
+  
+
+  document.getElementById("startNewGameButtonTie").addEventListener("click", () => {
+
+    location.reload();
+  });
+
+
 });
 
 
