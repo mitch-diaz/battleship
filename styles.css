@@ -1,10 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 
+
+body {
+/*   background-image: url(./assets/saffu-ocean-sunset-small.jpg); */
+  background-image: url(./assets/asael-pena-unsplash-navyships.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  margin: 0;
+}
+
+/* .h1Shadow {
+  text-shadow: 1px 1px 2px black;
+} */
+
 h1 {
+/*   text-shadow: 1px 1px 1px black; */
   font-family: "Black Ops One";
   font-size: 6em;
-  color: navy;
+/*   background: -webkit-linear-gradient(#fff326, #ac1f1b); */
+  background: -webkit-linear-gradient(#909090, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+/*   color: #e0e0ff; */
 }
+
 
 .container {
   display: flex;
@@ -12,18 +32,30 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 0 auto;
-  background-image: url(asael-pena-unsplash-navyships.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+#game-board {
+    display: flex;
+    height: 940px;
+    width: 940px;
+    margin: 40px 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .square {
-  width: 60px;
-  height: 60px;
-  background-color: rgb(168 210 255 / 71%);
+  width: 80px;
+  height: 80px;
+  background-color: rgb(168 210 255 / 25%);
   display: inline-block;
-  border: 3px solid #060061;
-  border-radius: 10px;
+  border: 2px solid #ffffff;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
   margin: 3px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,48 +63,75 @@ h1 {
 }
 
 .square:hover {
-  background-color: rgb(19, 213, 216);
+  background-color: blue;
+}
+
+.displayContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .topDisplayBox {
   width: 700px;
-  height: 80px;
-  border: 3px solid navy;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  height: 160px;
+  background-color: rgba(255, 255, 255, 0.309);
+  border-top: 5px solid #0000006b;
+  border-bottom: 5px solid #0000006b;
+  border-radius: 20px;
   margin: 0;
 }
 
 .topDisplayBox p {
   font-family: "Black Ops One";
   font-size: 1.6rem;
-  color: navy;
-  /* padding-left: 30px; */
+  color: #000000;
+  padding-top: 5px;
   text-align: center;
 }
 
 .playerBoxes {
   display: flex;
   flex-direction: row;
-  width: 700px;
-  margin: 0 0 40px 0;
+  width: 320px;
+/*   margin: 0 0 40px 0; */
   justify-content: space-evenly;
 }
 
-.playa {
-  width: 200px;
-  height: 100px;
-  border: 3px solid navy;
-  color: black;
-  padding: 0 0 0 10px;
-  border-radius: 15px;
-  background-color: #c7f9ff80;
+.playa1 {
+  width: 250px;
+  height: 120px;
+  border-left: 5px solid #0000006b;
+  border-bottom: 5px solid #0000006b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #b71515;
+/*   background-color: #c3383863; */
 }
 
-.playa p {
+.playa1 p {
   font-family: "Black Ops One";
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.playa2 {
+  width: 250px;
+  height: 120px;
+  border-right: 5px solid #0000006b;
+  border-bottom: 5px solid #0000006b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #0E0EC8;
+/*   background-color: #c3383863; */
+}
+
+.playa2 p {
+  font-family: "Black Ops One";
+  font-size: 1.6em;
+  text-align: center;
 }
 
 .ship {
@@ -84,11 +143,18 @@ h1 {
 } */
 
 .hit {
-  background-color: rgb(128, 0, 6);
+/*   background: #f12711; */
+/*   background: -webkit-linear-gradient(to top, #f5af19, #f12711);
+  background: linear-gradient(to top, #f5af19, #f12711); */
+  background: radial-gradient(#f5ee19, #ff1900);
+  background-repeat: no-repeat;
+
+/*   background-color: red; */
   pointer-events: none;
 }
 
 .miss {
-  background-color: rgb(19, 36, 182);
+  background-image: url(./assets/david-clode-fish.jpg);
+/*   background-color: blue; */
   pointer-events: none;
 }

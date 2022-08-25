@@ -200,7 +200,7 @@ class Ship {
         // elem.classList.add('miss')
       });
       // console.log(`You sunk my ${this.model} ${this.shipName}`);
-      let theMsg = document.querySelector('#messageArea, span');
+      let theMsg = document.querySelector('#messageArea');
       theMsg.innerText = `You sunk my ${this.model}
       ${this.shipName}`;
     }

@@ -31,29 +31,36 @@
 
   <body>
     <div class="container">
+      
       <h1>BATTLESHIP</h1>
 
-      <div class="topDisplayBox">
-        <p id="currentPlayer"></p>
-      </div>
-      <br />
-      <div class="topDisplayBox">
-        <p id="messageArea"></p>
+      <div class="displayContainer">
+
+        <div class="playerBoxes">
+          <div class="playa1" id="playerOne">
+            <p>Name:<span id="p1Name"></span></p>
+            <p>Attempts: <span id="p1Attempts">0</span></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="topDisplayBox">
+            <p id="currentPlayer"></p>
+            <p id="messageArea"></p>
+          </div>
+        </div>
+
+        <div class="playerBoxes">
+          <div class="playa2" id="playerTwo">
+            <p>Name:<span id="p2Name"></span></p>
+            <p>Attempts: <span id="p2Attempts">0</span></p>
+          </div>
+        </div>
+        
       </div>
 
       <div id="game-board" class="board"></div>
-
-      <div class="playerBoxes">
-        <div class="playa" id="playerOne">
-          <p>Name:<span id="p1Name"></span></p>
-          <p>Attempts: <span id="p1Attempts">0</span></p>
-        </div>
-
-        <div class="playa" id="playerTwo">
-          <p>Name:<span id="p2Name"></span></p>
-          <p>Attempts: <span id="p2Attempts">0</span></p>
-        </div>
-      </div>
+  
     </div>
 
     <!-- Intro Modal -->

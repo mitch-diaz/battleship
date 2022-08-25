@@ -23,7 +23,7 @@ class Player {
       theMsg.innerText = `It's a hit!`;
       hitShip[0].receiveDamage();
       if (this.shipsToHit === 0) {
-        let theMsg = document.querySelector("#messageArea, span");
+        let theMsg = document.querySelector("#messageArea");
         theMsg.innerText = `You sank all my battleships in ${this.attempts} attempts.`;
 
         this.gameBoard.players.forEach((player) => {
@@ -91,7 +91,7 @@ class Player {
       }
     } else {
       coordinates.classList.add("miss");
-      let theMsg = document.querySelector("#messageArea, span");
+      let theMsg = document.querySelector("#messageArea");
       theMsg.innerText = `It's a miss.`;
     }
   }

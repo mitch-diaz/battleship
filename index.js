@@ -33,10 +33,11 @@ window.addEventListener("load", (event) => {
   gameBoard.addPlayer(player2);
   player2.gameBoard = gameBoard
 
-  document.querySelector("#game-board").style.display = "inline-block";
-  document.querySelector("#game-board").style.height = "720px";
-  document.querySelector("#game-board").style.width = "720px";
-  document.querySelector("#game-board").style.margin = "40px 0 40px 0";
+  // DELETE THIS IF IT IS NOT NEEDED
+  // document.querySelector("#game-board").style.display = "inline-block";
+  // document.querySelector("#game-board").style.height = "720px";
+  // document.querySelector("#game-board").style.width = "720px";
+  // document.querySelector("#game-board").style.margin = "40px 0 40px 0";
 
   //// player 1 set up
 
