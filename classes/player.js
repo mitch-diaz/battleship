@@ -22,6 +22,7 @@ class Player {
       let theMsg = document.querySelector("#messageArea");
       theMsg.innerText = `It's a hit!`;
       hitShip[0].receiveDamage();
+      this.playSound('hit');
       if (this.shipsToHit === 0) {
         let theMsg = document.querySelector("#messageArea");
         theMsg.innerText = `You sank all my battleships in ${this.attempts} attempts.`;
@@ -67,20 +68,14 @@ class Player {
             } else {
               let winner = player1.attempts < player2.attempts ? player1.name : player2.name;
 
-            
+              let GameOverTitle = document.getElementById("endOfGame");
+              GameOverTitle.innerText = `${winner} is the winner!`;
 
-            
+              let p1Summary = document.getElementById("player1Summary");
+              p1Summary.innerText = `${player1.name} sank all battleships in ${player1.attempts} attempts.`;
 
-            
-            
-            let GameOverTitle = document.getElementById("endOfGame");
-            GameOverTitle.innerText = `${winner} is the winner!`;
-
-            let p1Summary = document.getElementById("player1Summary");
-            p1Summary.innerText = `${player1.name} sank all battleships in ${player1.attempts} attempts.`;
-
-            let p2Summary = document.getElementById("player2Summary");
-            p2Summary.innerText = `${player2.name} sank all battleships in ${player2.attempts} attempts.`;
+              let p2Summary = document.getElementById("player2Summary");
+              p2Summary.innerText = `${player2.name} sank all battleships in ${player2.attempts} attempts.`;
 
             $("#endPlayer2Modal").modal("show");
             }
@@ -93,7 +88,8 @@ class Player {
       coordinates.classList.add("miss");
       let theMsg = document.querySelector("#messageArea");
       theMsg.innerText = `It's a miss.`;
-    }
+      this.playSound('miss');
+    } 
   }
 
   displayBoard() {
@@ -104,6 +100,25 @@ class Player {
       gameBoardView.appendChild(div);
     });
   }
+
+  playSound(event) {
+    let audio;
+    let miss = new Audio('/assets/mixkit-sea-mine-deep-explosion-1186.wav');
+    let hit = new Audio('/assets/mixkit-explosive-impact-from-afar-2758.wav');
+    switch (event) {
+      case 'miss':
+        audio = miss;
+        break;
+      case 'hit':
+        audio = hit;
+        break;
+    }
+console.log(audio);
+   audio.play();
+  }
+
+  
+
 }
 
 

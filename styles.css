@@ -56,12 +56,12 @@ h1 {
 .square:hover {
   background-color: blue;
   border: 5px solid #bbff00;
-  width: 88px;
-  height: 88px;
-  border-top-left-radius: 42px;
-  border-top-right-radius: 42px;
-  border-bottom-right-radius: 42px;
-  border-bottom-left-radius: 42px;
+  width: 80px;
+  height: 80px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
 }
 
 .displayContainer {
@@ -103,7 +103,9 @@ h1 {
   color: #ffffff;
   padding: 10px;
   border-radius: 20px;
-  background-color: #b71515;
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .playa1 p {
@@ -120,7 +122,9 @@ h1 {
   color: #ffffff;
   padding: 10px;
   border-radius: 20px;
-  background-color: #0E0EC8;
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .playa2 p {
