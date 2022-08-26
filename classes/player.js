@@ -103,8 +103,8 @@ class Player {
 
   playSound(event) {
     let audio;
-    let miss = new Audio('/assets/mixkit-sea-mine-deep-explosion-1186.wav');
-    let hit = new Audio('/assets/mixkit-explosive-impact-from-afar-2758.wav');
+    let miss = new Audio('./assets/mixkit-sea-mine-deep-explosion-1186.wav');
+    let hit = new Audio('./assets/mixkit-explosive-impact-from-afar-2758.wav');
     switch (event) {
       case 'miss':
         audio = miss;
@@ -113,13 +113,6 @@ class Player {
         audio = hit;
         break;
     }
-console.log(audio);
    audio.play();
   }
-
-  
-
 }
-
-
-  

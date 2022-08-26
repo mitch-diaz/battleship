@@ -4,7 +4,7 @@ body {
   background-image: url(./assets/asael-pena-unsplash-navyships.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   margin: 0;
 }
 
@@ -29,7 +29,7 @@ h1 {
 
 #game-board {
   display: flex;
-  height: 940px;
+  height: 1000px;
   width: 940px;
   margin: 40px 0px;
   flex-direction: row;
