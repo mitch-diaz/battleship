@@ -22,8 +22,8 @@ const cleanBoard = () => {
 
 window.addEventListener("load", (event) => {
   let gameBoard = new Game();
-  let player1 = new Player(" Mitch");
-  let player2 = new Player(" Zequi");
+  let player1 = new Player(" Godzilla");
+  let player2 = new Player(" Monkey");
 
   document.getElementById("p1Name").innerText = player1.name;
   document.getElementById("p2Name").innerText = player2.name;

@@ -14,10 +14,8 @@ class Player {
     );
     
     if (coordinates.classList.contains("ship")) {
-      // console.log(hitShip);
       this.shipsToHit--;
       coordinates.classList.add("hit");
-      // console.log('hit');
 
       let theMsg = document.querySelector("#messageArea");
       theMsg.innerText = `It's a hit!`;
@@ -93,7 +91,6 @@ class Player {
   }
 
   displayBoard() {
-    // console.log(this.board);
     let gameBoardView = document.getElementById("game-board");
     gameBoardView.innerHTML = "";
     this.board.forEach((div) => {

@@ -39,7 +39,10 @@
         <div class="playerBoxes">
           <div class="playa1" id="playerOne">
             <p>Name:<span id="p1Name"></span></p>
-            <p>Attempts: <span id="p1Attempts">0</span></p>
+            <div class="picAndAttempts">
+              <div class="player1Pic" > </div>
+              <p>Attempts: <span id="p1Attempts">0</span></p>
+            </div>
           </div>
         </div>
 
@@ -53,7 +56,10 @@
         <div class="playerBoxes">
           <div class="playa2" id="playerTwo">
             <p>Name:<span id="p2Name"></span></p>
-            <p>Attempts: <span id="p2Attempts">0</span></p>
+            <div class="picAndAttempts">
+              <p>Attempts: <span id="p2Attempts">0</span></p>
+              <div class="player2Pic" > </div>
+            </div>
           </div>
         </div>
         
@@ -87,19 +93,19 @@
           <div class="modal-body">
             <ul>
               <li>
-                There are 7 ships hidden on the grid and they may be positioned
-                vertically or horizontally.
+                There are 7 ships hidden on the grid positioned
+                vertically and horizontally.
               </li>
               <li>
                 Each ship has a total length of between 2 and 5 consecutive
-                squares.
+                circles.
               </li>
-              <li>Click on the grid to guess where the ships are located.</li>
+              <li>Click on the circles to guess where the ships are located.</li>
               <li>
-                To sink a ship you have to click all of that ship's squares.
+                To sink a ship you have to click all of that ship's circles.
               </li>
               <li>
-                The message box above the grid will tell you if it’s a hit or
+                The clicked circle and the center message box above the grid will tell you if it’s a hit or
                 miss, and when you have sunk a ship.
               </li>
               <li>

@@ -13,7 +13,6 @@ class Ship {
   setLocation(clickedDiv) {
     const availableDivs = [...document.querySelectorAll(".square.open")];
   
-    // console.log(availableDivs);
     let randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
 
     if (clickedDiv === "random") {
@@ -194,12 +193,12 @@ class Ship {
 
   receiveDamage() {
     this.damage++;
-    // console.log(this.isSunk);
+    
     if (this.health - this.damage === 0) {
       this.water.forEach((elem) => {
         // elem.classList.add('miss')
       });
-      // console.log(`You sunk my ${this.model} ${this.shipName}`);
+
       let theMsg = document.querySelector('#messageArea');
       theMsg.innerText = `You sunk my ${this.model}
       ${this.shipName}`;

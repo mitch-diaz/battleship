@@ -6,7 +6,6 @@ class Game {
   }
 
     addGameBoard() {
-    
     return boardCode
   }
 
@@ -23,16 +22,5 @@ class Game {
     addPlayer(player) {
       this.players.push(player)
     }
-
-    displayScoreboard() {
-        // display scoreboard info:
-        // Hits, Sunk ships, Total points
-    }
-
-    displayFiringReport() {
-        
-    }
-
-    
 }
 
