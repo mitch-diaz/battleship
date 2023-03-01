@@ -1,11 +1,11 @@
 const ships = [
-  { name: "USS Impulse (PG-68)", model: "Aircraft Carrier", health: 5 },
-  { name: "USS Alacrity (PG-87)", model: "Battleship", health: 4 },
-  { name: "USS Haste (PG-92)", model: "Cruiser", health: 3 },
-  { name: "USS Leader (PYc-42)", model: "Frigate", health: 3 },
-  { name: "USS Ossipee (WPG-50)", model: "Frigate", health: 3 },
-  { name: "USS Winnemucca (PC-1145)", model: "Destroyer", health: 2 },
-  { name: "USS Alacrity (PG-87)", model: "Destroyer", health: 2 },
+  { model: "Aircraft Carrier", health: 5 },
+  { model: "Battleship", health: 4 },
+  { model: "Cruiser", health: 3 },
+  { model: "Frigate", health: 3 },
+  { model: "Frigate", health: 3 },
+  { model: "Destroyer", health: 2 },
+  { model: "Destroyer", health: 2 },
 ];
 
 const cleanBoard = () => {
@@ -79,14 +79,15 @@ window.addEventListener("load", (event) => {
     });
   });
 
+  // -=-=-=-=-=- CURRENT PLAYER NAME DISPLAY -=-=-=-=-=-
   document.getElementById("playerOne").addEventListener("click", () => {
     player1.displayBoard();
-    document.getElementById("currentPlayer").innerText = player1.name;
+    document.getElementById("currentPlayer").innerText = `${player1.name} is playing`;
   });
 
   document.getElementById("playerTwo").addEventListener("click", () => {
     player2.displayBoard();
-    document.getElementById("currentPlayer").innerText = player2.name;
+    document.getElementById("currentPlayer").innerText = `${player2.name} is playing`;
   });
 
   cleanBoard();
@@ -99,7 +100,7 @@ window.addEventListener("load", (event) => {
 
   document.getElementById('introModalButton').addEventListener('click', () => {
     player1.displayBoard();
-    document.getElementById("currentPlayer").innerText = player1.name;
+    document.getElementById("currentPlayer").innerText = `${player1.name} is playing`;
   });
 
   document.getElementById("startNewGameButton").addEventListener("click", () => {
