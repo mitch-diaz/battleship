@@ -12,7 +12,6 @@ class Ship {
 
   setLocation(clickedDiv) {
     const availableDivs = [...document.querySelectorAll(".square.open")];
-  
     let randomIndexAvailable = Math.floor(Math.random() * availableDivs.length);
 
     if (clickedDiv === "random") {
@@ -24,20 +23,21 @@ class Ship {
       x: clickedDiv.dataset["positionX"],
       y: clickedDiv.dataset["positionY"],
     };
+
     let idX = parseInt(clickedDivId.x);
     let idY = parseInt(clickedDivId.y);
 
-    // randomly select h or v
 
+    // -=-=-=-=-=- RANDOMLY SELECT H or V -=-=-=-=-=-
     let orientationList = ["V", "H"];
     let randomOrientationIndex = Math.floor(
       Math.random() * orientationList.length
     );
-    // const orientation = "H"; //prompt("V or H?: ").toUpperCase
-    const orientation = orientationList[randomOrientationIndex]; //prompt("V or H?: ").toUpperCase
+    
+    const orientation = orientationList[randomOrientationIndex];
     let tempLocation = [];
 
-    // PLace ships horizontal (x-axis)
+    // -=-=-=-=-=- PLACE SHIPS HORIZONTAL (x-axis) -=-=-=-=-=-
     if (orientation === "H") {
       let lastDiv = document.getElementById(`${idX}-${idY + this.health - 1}`);
       while (
@@ -108,7 +108,7 @@ class Ship {
         }
       });
 
-      //  Place ships vertical (y-axis)
+      // -=-=-=-=-=- PLACE SHIPS VERTICAL (y-axis) -=-=-=-=-=-
     } else if (orientation === "V") {
       let lastDiv = document.getElementById(`${idX + this.health - 1}-${idY}`);
       while (
@@ -178,8 +178,6 @@ class Ship {
           this.water.push(div);
         }
       });
-
-      //  Place ships vertical (y-axis)
     }
 
     tempLocation.forEach((div) => {
@@ -188,17 +186,12 @@ class Ship {
     });
 
     this.location = tempLocation;
-
   }
 
   receiveDamage() {
     this.damage++;
     
     if (this.health - this.damage === 0) {
-      this.water.forEach((elem) => {
-        // elem.classList.add('miss')
-      });
-
       let theMsg = document.querySelector('#messageArea');
       theMsg.innerText = `You sunk my ${this.model}
       ${this.shipName}`;

@@ -33,14 +33,7 @@ window.addEventListener("load", (event) => {
   gameBoard.addPlayer(player2);
   player2.gameBoard = gameBoard
 
-  // DELETE THIS IF IT IS NOT NEEDED
-  // document.querySelector("#game-board").style.display = "inline-block";
-  // document.querySelector("#game-board").style.height = "720px";
-  // document.querySelector("#game-board").style.width = "720px";
-  // document.querySelector("#game-board").style.margin = "40px 0 40px 0";
-
-  //// player 1 set up
-
+  // -=-=-=-=-=- PLAYER 1 SET UP -=-=-=-=-=-
   cleanBoard();
   ships.forEach((elem) => {
     let newShip = new Ship(elem.health, elem.name, elem.model);
@@ -57,15 +50,13 @@ window.addEventListener("load", (event) => {
 
   document.querySelectorAll(".square").forEach((square) => {
     square.addEventListener("click", () => {
-      // console.log(square);
       gameBoard.takeShot(player1);
       player1.checkIfhit(square);
       document.getElementById("p1Attempts").innerText = player1.attempts;
     });
   });
 
-  /// player 2 set up
-
+  // -=-=-=-=-=- PLAYER 2 SET UP -=-=-=-=-=-
   cleanBoard();
   ships.forEach((elem) => {
     let newShip = new Ship(elem.health, elem.name, elem.model);
@@ -82,14 +73,11 @@ window.addEventListener("load", (event) => {
 
   document.querySelectorAll(".square").forEach((square) => {
     square.addEventListener("click", () => {
-      // console.log(square);
       gameBoard.takeShot(player2);
       player2.checkIfhit(square);
       document.getElementById("p2Attempts").innerText = player2.attempts;
     });
   });
-
-  //// ----------------------------------------------------------
 
   document.getElementById("playerOne").addEventListener("click", () => {
     player1.displayBoard();
@@ -98,7 +86,6 @@ window.addEventListener("load", (event) => {
 
   document.getElementById("playerTwo").addEventListener("click", () => {
     player2.displayBoard();
-
     document.getElementById("currentPlayer").innerText = player2.name;
   });
 
@@ -108,7 +95,6 @@ window.addEventListener("load", (event) => {
     square.style.backgroundColor = 'blue'
   });
 
-  // console.log("modal opens");
     $('#introModal').modal('show');
 
   document.getElementById('introModalButton').addEventListener('click', () => {
@@ -117,20 +103,10 @@ window.addEventListener("load", (event) => {
   });
 
   document.getElementById("startNewGameButton").addEventListener("click", () => {
-
     location.reload();
   });
-
-  
 
   document.getElementById("startNewGameButtonTie").addEventListener("click", () => {
-
     location.reload();
   });
-
-
 });
-
-
-
-

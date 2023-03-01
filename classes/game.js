@@ -1,15 +1,12 @@
 class Game {
   constructor() {
     this.players = []
-    // this.shipsToHit = 0
-    
   }
 
-    addGameBoard() {
+  addGameBoard() {
     return boardCode
   }
 
-  
   takeShot (playerIn) {
     this.players.forEach((player) => {
       if (playerIn.name === player.name) {
@@ -18,9 +15,7 @@ class Game {
     })
   }
   
-
-    addPlayer(player) {
-      this.players.push(player)
-    }
-}
-
+  addPlayer(player) {
+    this.players.push(player)
+  }
+};
