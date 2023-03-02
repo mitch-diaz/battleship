@@ -18,12 +18,12 @@ class Player {
       coordinates.classList.add("hit");
 
       let theMsg = document.querySelector("#messageArea");
-      theMsg.innerText = `It's a hit!`;
+      theMsg.innerText = `💥Whoa💥 It's a hit!`;
       hitShip[0].receiveDamage();
       this.playSound('hit');
       if (this.shipsToHit === 0) {
         let theMsg = document.querySelector("#messageArea");
-        theMsg.innerText = `You sank all my battleships in ${this.attempts} attempts.`;
+        theMsg.innerText = `You sank all the ships in ${this.attempts} attempts.`;
 
         this.gameBoard.players.forEach((player) => {
           let currentPlayerIndex;
@@ -61,9 +61,9 @@ class Player {
                 let GameOverTitle = document.getElementById("endOfGame");
                 GameOverTitle.innerText = `${winner} is the winner!`;
                 let p1Summary = document.getElementById("player1Summary");
-                p1Summary.innerText = `${player1.name} sank all battleships in ${player1.attempts} attempts.`;
+                p1Summary.innerText = `${player1.name} sank all ships in ${player1.attempts} attempts.`;
                 let p2Summary = document.getElementById("player2Summary");
-                p2Summary.innerText = `${player2.name} sank all battleships in ${player2.attempts} attempts.`;
+                p2Summary.innerText = `${player2.name} sank all ships in ${player2.attempts} attempts.`;
 
                 $("#endPlayer2Modal").modal("show");
               }
@@ -73,7 +73,7 @@ class Player {
     } else {
         coordinates.classList.add("miss");
         let theMsg = document.querySelector("#messageArea");
-        theMsg.innerText = `It's a miss.`;
+        theMsg.innerText = `You missed... looks like fish for dinner 🤪`;
         this.playSound('miss');
       } 
   }
