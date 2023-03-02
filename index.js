@@ -82,12 +82,12 @@ window.addEventListener("load", (event) => {
   // -=-=-=-=-=- CURRENT PLAYER NAME DISPLAY -=-=-=-=-=-
   document.getElementById("playerOne").addEventListener("click", () => {
     player1.displayBoard();
-    document.getElementById("currentPlayer").innerText = `${player1.name} is playing`;
+    document.getElementById("currentPlayer").innerText = `Playing - ${player1.name} 🦎`;
   });
 
   document.getElementById("playerTwo").addEventListener("click", () => {
     player2.displayBoard();
-    document.getElementById("currentPlayer").innerText = `${player2.name} is playing`;
+    document.getElementById("currentPlayer").innerText = `Playing - ${player2.name} 🦍`;
   });
 
   cleanBoard();
@@ -100,7 +100,12 @@ window.addEventListener("load", (event) => {
 
   document.getElementById('introModalButton').addEventListener('click', () => {
     player1.displayBoard();
-    document.getElementById("currentPlayer").innerText = `${player1.name} is playing`;
+    document.getElementById("currentPlayer").innerText = `Playing - ${player1.name} 🦎`;
+  });
+  
+  document.getElementById('endPlayer1ModalButton').addEventListener('click', () => {
+    player2.displayBoard();
+    document.getElementById("currentPlayer").innerText = `Playing - ${player2.name} 🦍`;
   });
 
   document.getElementById("startNewGameButton").addEventListener("click", () => {

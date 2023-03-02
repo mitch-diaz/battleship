@@ -193,7 +193,7 @@ class Ship {
     
     if (this.health - this.damage === 0) {
       let theMsg = document.querySelector('#messageArea');
-      theMsg.innerText = `You sunk my ${this.model}`;
+      theMsg.innerText = `👉 You sunk the ${this.model}`;
     }
   }
 }
