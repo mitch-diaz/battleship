@@ -11,7 +11,7 @@ body {
 h1 {
   font-family: "Black Ops One";
   font-size: 6em;
-  margin: 10px, 0;
+  margin: 0;
   background: -webkit-linear-gradient(#909090, #000000);
   -webkit-background-clip: text;
   background-clip: text;
@@ -43,7 +43,6 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 
 .square {
   width: 70px;
@@ -102,7 +101,7 @@ h1 {
 
 .playerBoxes {
   display: flex;
-  width: 210px;
+  width: 180px;
   justify-content: flex-start;
   margin-bottom: 30px;
 }
@@ -142,55 +141,53 @@ h1 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 190px;
+  width: 160px;
   height: 220px;
   border-left: 5px solid #0000006b;
   border-bottom: 5px solid #0000006b;
   color: #ffffff;
   padding: 10px;
-  border-radius: 20px;
-  background: #200122;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  background: #006305; 
+  /* ^ fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #7cd219, #006305);  
+  /* ^ Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #7cd219, #006305); 
+  /* ^ W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .playa1 p {
   font-family: "Black Ops One";
-  font-size: 1.4em;
+  font-size: 1.7em;
   text-align: center;
   margin: 0;
 }
+
 .playa2 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 190px;
+  width: 160px;
   height: 220px;
   border-left: 5px solid #0000006b;
   border-bottom: 5px solid #0000006b;
   color: #ffffff;
   padding: 10px;
-  border-radius: 20px;
-  background: #0575E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #021B79);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,  #0575E6, #021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  background: #3d2016;  
+  /* ^ fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #808080, #3d2016);  
+  /* ^ Chrome 10-25, Safari 5.1-6*/
+  background: linear-gradient(to right, #947e69, #4f3b28); 
+  /* ^ W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .playa2 p {
   font-family: "Black Ops One";
-  font-size: 1.4em;
+  font-size: 1.7em;
   text-align: center;
   margin: 0;
 }
-
-/* REVEAL SHIPS FOR TESTING */
-/* .ship {
-  background-color: #d2530f;
-} */
-
-/* REVEAL BUFFER ZONE FOR TESTING */
-/* .water { 
-  background-color: blue;
-} */
 
 .hit {
   border: 2px solid red;
@@ -213,3 +210,13 @@ footer {
   background-color: #dcdcdc;
   height: 500px;
 }
+
+/* REVEAL SHIPS FOR TESTING */
+/* .ship {
+  background-color: #d2530f;
+} */
+
+/* REVEAL BUFFER ZONE FOR TESTING */
+/* .water { 
+  background-color: blue;
+} */
